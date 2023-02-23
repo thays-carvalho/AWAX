@@ -1,3 +1,5 @@
+/* ------------------------ CONFIGURAÇÕES GERAIS  ------------------------ */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,600;0,700;1,300&display=swap');
 /* font-family: 'Montserrat', sans-serif; */
 
@@ -6,6 +8,12 @@
     --decopri: #b28756;
     --corfont: #fff;
     --menusele: #dcdcdc;
+    --desColorLight: #ccc;
+    --bgDefLight: #f7f7f7;
+    --titColorLight: #000;
+    --bgDefDark: #000;
+    --titColorDark: #fff;
+    --descColor:#ccc;
 }
 *{
     padding: 0;
@@ -15,6 +23,61 @@
 body{
     font-family: 'Montserrat', sans-serif;
 }
+.button {
+    display: inline-block;
+    background-color: var(--decopri);
+    color: var(--corfont);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin-top: 30px;
+    border-radius: 20px;
+}
+/*  -------------------------TEMPLATE DAS SECTIONS -------------------------*/
+.default{
+    background-color: red;
+    width: 100vw;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.default .sectionTitle,
+.default .sectionDesc{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.default .sectionTitle{
+    font-size: 22px;
+}
+.default .sectionDesc{
+    font-size: 14px;
+    color: var(--descColor);
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+.default .sectionBody{
+    max-width: 1140px;
+    margin: auto;
+    min-height: 100px;
+}
+.default.Light{
+    background-color: var(--bgDefLight);
+}
+.default.Light .sectionTitle{
+    color: var(--titColorLight);
+}
+.default.Dark{
+    background-color: var(--bgDefDark);
+}
+.default.Dark .sectionTitle{
+    color: var(--titColorDark);
+}
+.default.Dark .sectionDesc{
+    color: var(--titColorDark);
+}
+/*  ------------------------- CABEÇALHO ----------------------------- */
 header{
     height: 100px;
     background-color: var(--bgcolor);
@@ -38,6 +101,7 @@ header{
     background-repeat: no-repeat;
     background-position: center;
 }
+/*  ----------------------------- MENU  ------------------------------- */
 .menu{
     flex: 1;
     display: flex;
@@ -55,8 +119,8 @@ header{
     text-transform: uppercase;
     font-weight: 600;
     text-decoration: none;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     height: 100px;
     display: flex;
     align-items: center;
@@ -68,4 +132,80 @@ header{
 }
 .menu .active a{
     border-bottom: 5px solid var(--decopri);
+}
+/*  ------------------------- BANNER - SLIDERS ------------------------- */
+.banner{
+    height: calc(100vh - 100px);
+    background-color: #131313;
+    background-image: url("../image/bg.jpg");
+    background-size: cover; /*entraliza a imagem */
+    background-position: bottom;
+    overflow: hidden;
+}
+.banner .sliders{
+    width: 1000vw;
+    height: 100%;
+}
+.banner .slider{
+    width: calc(100vw + 4px);
+    height: 100%;
+    display: inline-block;
+    background-color: rgba(0,0,0,0.8);
+    margin-left: -4px;
+
+}
+.banner .slidearea{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: var(--corfont);
+}
+.banner h1{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 50px;
+}
+.banner span{
+    color: var(--decopri);
+}
+.banner h2{
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+.banner .sliderspointers{
+    width: 100vw;
+    height: 20px;
+    position: absolute;
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner .pointer{
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--decopri);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.banner .pointer.active{
+    background-color: var(--decopri);
+}
+/*  ------------------------- SECTION ABOUT US  ------------------------- */
+.sectionAboutUs{
+    display: flex;
+}
+.sectionAboutUsLeft{
+    flex: 1;
+}
+.sectionAboutUsLeft p{
+    font-size: 14px;
+    line-height: 25px;
+}
+.sectionAboutUsRight img{
+    width: 480px;
+    box-shadow: 15px 15px 15px #aaa9a9;
 }
